@@ -43,6 +43,20 @@ git clone https://github.com/SEU-USUARIO/fullstack-project.git
 cd fullstack-project
 ```
 
+🧠 Backend
+
+```bash
+# Acessar o backend
+cd backend
+
+# Dependências principais
+npm install express
+npm install cors
+
+# Dependências de desenvolvimento
+npm install --save-dev @types/express @types/cors ts-node typescript
+```
+
 ⚙️ Rodando com Docker
 ```bash
 # Buildar e iniciar os containers
