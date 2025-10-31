@@ -37,10 +37,10 @@ O backend fornece uma rota de teste, e o frontend permite consultar o backend.
 
 ```bash
 # Clonar o repositório
-git clone https://github.com/SEU-USUARIO/fullstack-project.git
+git clone https://github.com/SEU-USUARIO/docker-fullstackt.git
 
 # Acessar a pasta do projeto
-cd fullstack-project
+cd docker-fullstack
 ```
 
 🧠 Backend
