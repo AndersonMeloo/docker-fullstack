@@ -1,17 +1,23 @@
-    FROM node:22
+FROM node:22
 
-    WORKDIR /app
+WORKDIR /app
 
-    # Copiar apenas package.json e package-lock.json para Instalar as Dependências
-    COPY package*.json ./
+#Variavel de Ambiente
+ENV NEXT_PUBLIC_API_URL=http://localhost:3000
 
-    # Instalar dependências
-    RUN npm install
+# Copiar apenas package.json e package-lock.json para Instalar as Dependências
+COPY package*.json ./
 
-    COPY . .
+# Instalar dependências
+RUN npm install
 
-    EXPOSE 3000
+COPY . .
 
-    CMD ["npm", "run", "dev"]
+RUN npm run build
 
-    # docker compose build --no-cache
+# EXPOSE 3000
+
+# CMD ["npm", "run", "dev"]
+CMD ["npm", "start"]
+
+# docker compose build --no-cache - Faz todo processo sem reaproveitar nenhum cash
