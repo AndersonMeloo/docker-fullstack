@@ -9,7 +9,7 @@ app.use(cors());
 
 // Rotas
 router.get('/test', (req, res) => {
-    res.json({ name: "GTI" });
+    res.json({ name: "Golf GTI" });
 });
 
 app.use('/', router);
