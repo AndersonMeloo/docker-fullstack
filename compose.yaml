@@ -6,9 +6,13 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3000:3000
+    # volumes:
+    #   - ./backend:/app
+    #   - /app/node_modules
+    restart: always
     volumes:
-      - ./backend:/app
-      - /app/node_modules
+      - uploads:/app/uploads
+      - certificates:/app/certificates
 
   frontend:
     container_name: frontend
@@ -17,7 +21,27 @@ services:
       dockerfile: Dockerfile
     ports:
       - 4000:3000
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-      - /app/.next
+    # volumes:
+    #   - ./frontend:/app
+    #   - /app/node_modules
+    #   - /app/.next
+    restart: always
+
+    # Manter arquivos e enviando para VOLUMES
+volumes:
+  uploads:
+  certificates:
+
+#docker logs frontend / backend
+#docker logs -f frontend: Monitoramento em tempo Real
+#docker logs --tail 5 frontend: Pega as ultimas linhas ou o Valor X
+
+# Acessando Terminal do Container
+#docker exec -it frontend bash|sh
+#bash Linux, sh Alpine 
+#exit
+
+#docker container prune: Remove todos Containers Parados
+#docker image prune
+#docker system prune
+
